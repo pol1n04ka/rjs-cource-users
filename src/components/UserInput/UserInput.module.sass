@@ -3,9 +3,17 @@
   form
     display: flex
     flex-direction: column
-  label
-    font-weight: bold
-    margin-bottom: 10px
+    label
+      font-weight: bold
+      margin-bottom: 10px
+    input
+      border-width: 1px
+      border-radius: 10px
+      height: 2.5em
+      padding: 0 20px 0 20px
+      &:focus
+        outline: none
+        background-color: #dedede
 
-  &:nth-child(1) input
+  &:not(:last-child) input
     margin-bottom: 1em

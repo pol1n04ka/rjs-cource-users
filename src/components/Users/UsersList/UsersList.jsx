@@ -1,11 +1,18 @@
 import styles from "./UsersList.module.sass";
 import Card from "../../UI/Card/Card";
-import UserItem from "../UserItem/UserItem";
 
 export default function UsersList(props) {
-  const returnUsers = props.users.map((user) => {
-    return <UserItem key={user.id} name={user.name} age={user.age} />;
-  });
-
-  return <Card className={styles}>{returnUsers}</Card>;
+  return (
+    <Card className={styles.usersList}>
+      <ul>
+        {props.users.map((user) => {
+          return (
+            <li key={user.id}>
+              {user.name} ({user.age} years old)
+            </li>
+          );
+        })}
+      </ul>
+    </Card>
+  );
 }

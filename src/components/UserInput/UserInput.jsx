@@ -32,7 +32,7 @@ export default function UserInput(props) {
     };
     props.onAddUser(user);
     setName("");
-    setAge(0);
+    setAge("");
   };
 
   return (
