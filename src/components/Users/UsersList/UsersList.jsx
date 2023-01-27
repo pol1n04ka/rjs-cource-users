@@ -2,8 +2,12 @@ import styles from "./UsersList.module.sass";
 import Card from "../../UI/Card/Card";
 
 export default function UsersList(props) {
-  return (
-    <Card className={styles.usersList}>
+  const blankText = () => {
+    return <p className={styles.blank}>You don't have any users yet</p>;
+  };
+
+  const listOfUsers = () => {
+    return (
       <ul>
         {props.users.map((user) => {
           return (
@@ -13,6 +17,12 @@ export default function UsersList(props) {
           );
         })}
       </ul>
+    );
+  };
+
+  return (
+    <Card className={styles.usersList}>
+      {props.users.length === 0 ? blankText() : listOfUsers()}
     </Card>
   );
 }

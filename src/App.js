@@ -4,10 +4,7 @@ import UsersList from "./components/Users/UsersList/UsersList";
 import { useState } from "react";
 
 function App() {
-  const [users, setUsers] = useState([
-    { id: "1", name: "Anna", age: 34 },
-    { id: "2", name: "John", age: 24 },
-  ]);
+  const [users, setUsers] = useState([]);
 
   const addUser = (user) => {
     setUsers((prevState) => {
